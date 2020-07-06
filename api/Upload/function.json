@@ -12,6 +12,7 @@
       "route": "upload"
     },
     {
+      "dataType": "binary",
       "type": "http",
       "direction": "out",
       "name": "res"
