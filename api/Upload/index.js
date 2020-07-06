@@ -1,9 +1,9 @@
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
     // encode body to base64 string
-    var bodyBuffer = Buffer.from(request.body);
+    var bodyBuffer = Buffer.from(req.body);
     // get boundary for multipart data e.g. ------WebKitFormBoundaryDtbT5UpPj83kllfw
-    var boundary = multipart.getBoundary(request.headers['content-type']);
+    var boundary = multipart.getBoundary(req.headers['content-type']);
     // parse the body
     var parts = multipart.Parse(bodyBuffer, boundary);
     context.res = { body : { name : parts[0].filename, type: parts[0].type, data: parts[0].data.length}}; 
